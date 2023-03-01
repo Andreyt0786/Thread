@@ -29,7 +29,7 @@ interface PostDao {
         likedByMe = CASE WHEN likedByMe THEN 0 ELSE 1 END
         WHERE id = :id
         """)
-    fun likeById(id: Long)
+    fun likeById(id: Long)//В реализации поменял аргумент на post
 
     @Query("DELETE FROM PostEntity WHERE id = :id")
     fun removeById(id: Long)
